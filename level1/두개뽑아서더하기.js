@@ -11,7 +11,6 @@ function solution(numbers) {
 	}
 	// console.log(numbers);
 	console.log(uniqueArr);
-	// console.log(uniqueArr);
 	// return answer;
 }
 solution([2, 1, 3, 4, 1]);
