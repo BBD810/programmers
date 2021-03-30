@@ -1,4 +1,4 @@
-// // process 1. 시간 초과로 탈락
+//  process 1. 시간 초과로 탈락
 function solution(participant, completion) {
 	var result = [];
 	for (var i = 0; i < participant.length; i++) {
@@ -28,7 +28,7 @@ solution(
 	['josipa', 'filipa', 'marina', 'nikola']
 );
 
-// //process 2 합격
+// process 2 합격
 function solution(participant, completion) {
 	participant.sort();
 	completion.sort();
