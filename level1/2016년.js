@@ -21,19 +21,79 @@ function solution(a, b) {
 		}
 	}
 	result += b;
-	console.log(result);
+	// console.log(result);
 
 	for (var j = 0; j < 7; j++) {
 		if (result % 7 === j) {
 			answer = day[j];
 		}
 	}
-	return answer;
+	// return answer;
 	// console.log('result', result);
 	console.log(a, '월', b, '일은', answer, '요일입니다');
 }
 solution(1, 8);
-// solution(11, 29);
+solution(11, 29);
+solution(7, 30);
+solution(7, 3);
+solution(8, 10);
+
+//
+//
+//
+// // 수정 전 코드 ^^
+// var day = ['THU', 'FRI', 'SAT', 'SUN', 'MON', 'TUE', 'WED'];
+// var result;
+// var answer;
+// var i;
+// function solution(a, b) {
+// 	if (a === 1) {
+// 		result = b;
+// 	}
+// 	if (a === 2) {
+// 		result = 31 + b;
+// 	}
+// 	if (a === 3) {
+// 		result = 60 + b;
+// 	}
+// 	if (a === 4) {
+// 		result = 91 + b;
+// 	}
+// 	if (a === 5) {
+// 		result = 121 + b;
+// 	}
+// 	if (a === 6) {
+// 		result = 152 + b;
+// 	}
+// 	if (a === 7) {
+// 		result = 182 + b;
+// 	}
+// 	if (a === 8) {
+// 		result = 213 + b;
+// 	}
+// 	if (a === 9) {
+// 		result = 244 + b;
+// 	}
+// 	if (a === 10) {
+// 		result = 274 + b;
+// 	}
+// 	if (a === 11) {
+// 		result = 305 + b;
+// 	}
+// 	if (a === 12) {
+// 		result = 335 + b;
+// 	}
+// 	for (var i = 0; i < 7; i++) {
+// 		if (result % 7 === i) {
+// 			answer = day[i];
+// 		}
+// 	}
+// 	return answer;
+// 	// console.log('result', result);
+// 	// console.log(a, '월', b, '일은', answer, '요일입니다');
+// }
+// solution(5, 24);
 // solution(7, 30);
-// solution(7, 3);
 // solution(8, 10);
+// solution(6, 7);
+// solution(12, 25);
