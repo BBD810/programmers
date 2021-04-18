@@ -44,7 +44,7 @@ function solution(a, b) {
 	if (a === 12) {
 		result = 335 + b;
 	}
-	for (var i = 1; i < 8; i++) {
+	for (var i = 0; i < 7; i++) {
 		if (result % 7 === i) {
 			answer = day[i];
 		}
