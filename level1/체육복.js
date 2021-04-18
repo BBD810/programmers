@@ -12,25 +12,14 @@ function solution(n, lost, reserve) {
 	for (var x = 0; x < lost.length; x++) {
 		for (var y = 0; y < reserve.length; y++) {
 			if (lost[x] === reserve[y]) {
-				// answer.push(lost[x]);
-				lost.splice(x, 1);
-				reserve.splice(y, 1);
-				x = 0;
-				y = -1;
+				lost[x] = false;
+				reserve[y] = false;
 			}
 		}
-	}
-	// console.log('answer', answer, 'lost', lost, 'reserve', reserve);
-	for (var i = 0; i < lost.length; i++) {
-		if (reserve.includes(lost[i] + 1)) {
-			if (reserve.includes(lost[i] - 1)) {
-				continue;
-			}
-		} else {
-			n -= 1;
-		}
-	}
-	console.log(n);
+	} 
+	// ----- 중복제거 --- //
+	for ( i =0; i<lost.length)
+	console.log('answer', answer, 'lost', lost, 'reserve', reserve);
 }
 // solution(5, [2, 4], [1, 3, 5]);
 solution(7, [1, 2, 3, 4, 6, 7], [1, 2, 3]);
