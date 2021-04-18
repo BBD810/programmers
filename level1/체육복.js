@@ -2,11 +2,6 @@
 // lost = 잃어버린 학생의 번호가 담긴 배열
 // reserve = 여벌의 체육복을 가져온 학생들의 번호가 담긴 배열
 
-// 1. 뒷번호의 학생이 앞번호의 학생에게 빌려주는 경우
-// if 잃어버린 학생이  lost에 포함되어 있고 , 뒷번호의 학생이 reserve 에 포함되어 있으면 -> answer에 옮겨주고 lost 삭제 reserve 삭제
-// 출력은 answer.length
-// answer.length
-
 var answer = []; //answer = 체육복을 입을 수 있는 애들
 function solution(n, lost, reserve) {
 	for (var x = 0; x < lost.length; x++) {
@@ -20,13 +15,26 @@ function solution(n, lost, reserve) {
 	// console.log('lost:', lost, 'reserve:', reserve);
 	// ----- 중복제거 --- //
 	for (i = 0; i < lost.length; i++) {
-		if (lost.includes(reserve[i] - 1)) {
+		if (lost[i] === false) {
+			continue;
 		}
+		if (reserve.includes(lost[i] - 1)) {
+			let idx = reserve.indexOf(lost[i] - 1);
+
+			lost[i] = false;
+			reserve[idx] = false;
+		}
+		if (reserve.includes(lost[i] + 1)) {
+			let idx1 = reserve.indexOf(lost[i] + 1);
+
+			lost[i] = false;
+			reserve[idx1] = false;
+		}
+
+		n -= 1;
 	}
+	console.log(n);
 }
 // solution(5, [2, 4], [1, 3, 5]);
 solution(9, [1, 2, 3, 4, 6, 8], [1, 2, 3, 7, 9]);
 // solution(10, [1, 3, 5, 7, 8, 9], [2, 5, 8]);
-if (lost[i] === false) {
-	continue;
-}
