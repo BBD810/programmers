@@ -9,27 +9,26 @@
 
 var answer = []; //answer = 체육복을 입을 수 있는 애들
 function solution(n, lost, reserve) {
-	var cross = [];
-	for (x = 0; x < lost.length; x++) {
-		for (y = 0; y < reserve.length; y++) {
+	for (var x = 0; x < lost.length; x++) {
+		for (var y = 0; y < reserve.length; y++) {
 			if (lost[x] === reserve[y]) {
-				cross.push(lost[x]);
+				// answer.push(lost[x]);
+				lost.splice(x, 1);
+				reserve.splice(y, 1);
+				x = 0;
+				y = -1;
 			}
 		}
 	}
-	// console.log(cross);
-
-	var self = n - lost.length - reserve.length + cross.length;
-	for (var i = 0; i < 10; i++) {
-		//i = 잃어버린 ( 앞)
-		if (lost.includes(i) && reserve.includes(i + 1)) {
-			answer.push(i);
+	console.log('answer', answer, 'lost', lost, 'reserve', reserve);
+	for (var i = 0; i < lost.length; i++) {
+		if (reserve.includes(lost[i] + 1)) {
+			continue;
 		} else {
-			// console.log('hi');
+			n -= 1;
 		}
 	}
-	console.log(self);
-	// console.log(answer);
 }
 // solution(5, [2, 4], [1, 3, 5]);
-solution(7, [1, 2, 3, 4, 6, 7], [1, 2, 3]);
+// solution(7, [1, 2, 3, 4, 6, 7], [1, 2, 3]);
+solution(10, [1, 3, 5, 7, 8, 9], [2, 5, 8]);
