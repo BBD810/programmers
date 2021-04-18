@@ -14,25 +14,25 @@ function solution(n, lost, reserve) {
 	}
 	// console.log('lost:', lost, 'reserve:', reserve);
 	// ----- 중복제거 --- //
-	for (i = 0; i < lost.length; i++) {
+	for (var i = 0; i < lost.length; i++) {
 		if (lost[i] === false) {
 			continue;
 		}
 		if (reserve.includes(lost[i] - 1)) {
 			let idx = reserve.indexOf(lost[i] - 1);
-
 			lost[i] = false;
 			reserve[idx] = false;
+			continue;
 		}
 		if (reserve.includes(lost[i] + 1)) {
 			let idx1 = reserve.indexOf(lost[i] + 1);
-
 			lost[i] = false;
 			reserve[idx1] = false;
+			continue;
 		}
-
 		n -= 1;
 	}
+	return n;
 	console.log(n);
 }
 // solution(5, [2, 4], [1, 3, 5]);
