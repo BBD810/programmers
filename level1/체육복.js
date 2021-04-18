@@ -23,13 +23,15 @@ function solution(n, lost, reserve) {
 	// console.log('answer', answer, 'lost', lost, 'reserve', reserve);
 	for (var i = 0; i < lost.length; i++) {
 		if (reserve.includes(lost[i] + 1)) {
-			continue;
+			if (reserve.includes(lost[i] - 1)) {
+				continue;
+			}
 		} else {
 			n -= 1;
 		}
-
-
+	}
+	console.log(n);
 }
 // solution(5, [2, 4], [1, 3, 5]);
-// solution(7, [1, 2, 3, 4, 6, 7], [1, 2, 3]);
-solution(10, [1, 3, 5, 7, 8, 9], [2, 5, 8]);
+solution(7, [1, 2, 3, 4, 6, 7], [1, 2, 3]);
+// solution(10, [1, 3, 5, 7, 8, 9], [2, 5, 8]);
