@@ -16,11 +16,17 @@ function solution(n, lost, reserve) {
 				reserve[y] = false;
 			}
 		}
-	} 
+	}
+	// console.log('lost:', lost, 'reserve:', reserve);
 	// ----- 중복제거 --- //
-	for ( i =0; i<lost.length)
-	console.log('answer', answer, 'lost', lost, 'reserve', reserve);
+	for (i = 0; i < lost.length; i++) {
+		if (lost.includes(reserve[i] - 1)) {
+		}
+	}
 }
 // solution(5, [2, 4], [1, 3, 5]);
-solution(7, [1, 2, 3, 4, 6, 7], [1, 2, 3]);
+solution(9, [1, 2, 3, 4, 6, 8], [1, 2, 3, 7, 9]);
 // solution(10, [1, 3, 5, 7, 8, 9], [2, 5, 8]);
+if (lost[i] === false) {
+	continue;
+}
