@@ -1,55 +1,16 @@
-// function solution(array, commands) {
-// 	var answer = [];
-// 	var cut1 = array.slice(commands[0][0] - 1, commands[0][1]); // ==> [5,2,6,3]
-// 	var cut2 = array.slice(commands[1][0] - 1, commands[1][1]); // ==> [6]
-// 	var cut3 = array.slice(commands[2][0] - 1, commands[2][1]); //==> [1,5,2,6,3,7,4]
-// 	// console.log(cut1, cut2, cut3);
-// 	for (var i = 0; i < commands.length; i++) {
-// 		var cut = array.slice(commands[i][0] - 1, commands[i][1]);
-
-// 		// console.log(cut);
-// 	}
-// 	var sort = cut.sort();
-// 	// console.log(sort);
-// 	var choice1 = sort[commands[0][2] - 1];
-// 	var choice2 = sort[commands[1][2] - 1];
-// 	var choice3 = sort[commands[2][2] - 1];
-// 	// console.log(choice1, choice2, choice3);
-// 	answer.push(choice1, choice2, choice3);
-// 	console.log(answer);
-// }
-// solution(
-// 	[1, 5, 2, 6, 3, 7, 4],
-// 	[
-// 		[2, 5, 3],
-// 		[4, 4, 1],
-// 		[1, 7, 3],
-// 	]
-// );
-
-function solution(array, commands) {
-	var answer = [];
-	for (var i = 0; i < commands.length; i++) {
-		var cut = array.slice(commands[i][0] - 1, commands[i][1]);
-		console.log('cut', cut);
-		var sort = cut.sort(function (a, b) {
-			if (a > b) return 1;
-			if (a === b) return 0;
-			if (a < b) return -1;
-		});
-		console.log('sort', sort);
-		var choice = sort[commands[i][2] - 1];
-		answer.push(choice);
-		console.log('answer', answer);
+function solution(strings, n) {
+	var result = [];
+	for (var i = 0; i < strings.length; i++) {
+		var arr = strings[i].split('');
+		// console.log(arr);
+		result.push(arr.splice(0, 1));
+		console.log('arr:', arr, 'result:', result);
 	}
-	console.log('answer', answer);
-	return answer;
 }
-solution(
-	[1, 5, 2, 6, 3, 7, 4],
-	[
-		[2, 5, 3],
-		[4, 4, 1],
-		[1, 7, 3],
-	]
-);
+solution(['sun', 'bed', 'car'], 1);
+
+// 1. 정렬하기
+// 2. strings의 각 요소들을 splice ( 0, n)으로 자르기
+// 3. 자른것들을 다른곳에 모아둠
+// 4. 잘려나간 요소들을 정렬
+// 5. 원래 모양대로 합쳐줌
