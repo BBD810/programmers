@@ -1,0 +1,1 @@
+function solution(strings, n) {}
