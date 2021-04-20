@@ -12,9 +12,9 @@ function solution(num) {
 	}
 	// console.log('result', result);
 
-	for (x = 0; x < result.length; x++) {
+	for (var x = 0; x < result.length; x++) {
 		var check = true;
-		loop: for (y = 2; y < result[x]; y++) {
+		loop: for (var y = 2; y < result[x]; y++) {
 			if (result[x] % y === 0) {
 				check = false;
 				break loop;
