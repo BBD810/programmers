@@ -1,6 +1,5 @@
-// 3000이하의 소수 구하는 방법
-function getPrime() {
-    for ( x = 2 ; x <result[a])
-    result[a]
+var a = ['a', 'b', 'c', 'd', 'e', 'f'];
+var b = ['c', 'd', 'e', 'f', 'g'];
+if (a.includes(b[0])) {
+	console.log('YES');
 }
-getPrime();
