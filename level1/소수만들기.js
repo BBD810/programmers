@@ -1,14 +1,31 @@
 // 주어진 숫자 중 3개의 수를 더해서 소수가 되는 경우의 갯수를 구하기
 
 function solution(num) {
-	for (var a = 0; a < num.length - 2; a++) {
-		for (var b = a + 1; b < num.length - 1; b++) {
-			for (var c = b + 1; c < num.length; c++) {
-				var sum = num[a] + num[b] + num[c];
+	var answer = 0;
+	var result = [];
+	for (var i = 0; i < num.length - 2; i++) {
+		for (var j = i + 1; j < num.length - 1; j++) {
+			for (var k = j + 1; k < num.length; k++) {
+				result.push(num[i] + num[j] + num[k]);
 			}
 		}
 	}
-	console.log(sum);
+	// console.log('result', result);
+
+	for (x = 0; x < result.length; x++) {
+		var check = true;
+		loop: for (y = 2; y < result[x]; y++) {
+			if (result[x] % y === 0) {
+				check = false;
+				break loop;
+			}
+		}
+		if (check === true) {
+			answer++;
+		}
+	}
+
+	console.log(answer);
 }
-solution([1, 2, 3, 4]); // return 1
-// solution([15, 23, 46, 37, 27]); // return 4
+solution([1, 2, 3, 5, 6, 7]);
+solution([15, 23, 46, 37, 27]);

@@ -1,4 +1,6 @@
-function solution(d, budget) {
-    
+// 3000이하의 소수 구하는 방법
+function getPrime() {
+    for ( x = 2 ; x <result[a])
+    result[a]
 }
-solution([1, 3, 2, 5, 4], 9);
+getPrime();
