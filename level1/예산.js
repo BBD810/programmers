@@ -1,3 +1,5 @@
+// 2021.04.20 해결
+
 function solution(d, budget) {
 	var answer = 0;
 	d.sort((a, b) => a - b);

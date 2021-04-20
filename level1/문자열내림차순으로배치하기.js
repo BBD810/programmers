@@ -1,3 +1,5 @@
+// 2021.04.20 해결
+
 function solution(s) {
 	var answer = '';
 	var arr = s.split('');
