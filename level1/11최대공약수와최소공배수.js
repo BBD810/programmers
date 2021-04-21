@@ -31,3 +31,10 @@ function solution(n, m) {
 }
 solution(3, 12);
 solution(1, 10);
+
+// 유클리드 호제법으로 구현해보기
+function solution(n, m) {
+	var answer = [];
+}
+solution(3, 12);
+solution(1, 10);

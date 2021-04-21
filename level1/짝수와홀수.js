@@ -1,4 +1,5 @@
 // 2021.04.21 해결
+
 function solution(num) {
 	var answer = '';
 	if (num % 2 === 0) {
