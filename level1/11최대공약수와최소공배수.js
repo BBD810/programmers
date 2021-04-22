@@ -19,22 +19,15 @@ function solution(n, m) {
 	var answer = [];
 	var basket = [];
 	for (var i = 1; i < n + 1; i++) {
-		if (m % n === 0) {
+		if (m % i === 0) {
 			basket.push(i);
 		}
 	}
-	var max = basket.pop();
+	// console.log(basket);
 	// console.log(max);
-	answer.push(max);
+	answer.push(basket.pop());
 	answer.push((n * m) / answer[0]);
 	console.log(answer);
-}
-solution(3, 12);
-solution(1, 10);
-
-// 유클리드 호제법으로 구현해보기
-function solution(n, m) {
-	var answer = [];
 }
 solution(3, 12);
 solution(1, 10);
