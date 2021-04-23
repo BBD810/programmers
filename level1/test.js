@@ -1,10 +1,5 @@
-function solution(n) {
-	answer = 0;
-	n = String(n);
-	n = n.split('');
-	for (var i = 0; i < n.length; i++) {
-		n[i] = Number(n[i]);
-		answer += n[i];
-	}
-}
-solution(123);
+var arr = [1, 2, 3, 4, 5];
+arr.slice();
+var arr2 = arr.push(6);
+
+console.log('arr', arr, 'arr2', arr2);
