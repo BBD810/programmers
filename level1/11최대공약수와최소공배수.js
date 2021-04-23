@@ -17,17 +17,32 @@
 
 function solution(n, m) {
 	var answer = [];
-	var basket = [];
-	for (var i = 1; i < n + 1; i++) {
-		if (m % i === 0) {
-			basket.push(i);
-		}
+	var big;
+	var small;
+	if (n >= m) {
+		big = n;
+		small = m;
+	} else {
+		big = m;
+		small = n;
 	}
-	// console.log(basket);
-	// console.log(max);
-	answer.push(basket.pop());
+	//GCD (최대공약수) 구하는 함수
+	function getGCD(_small, _big) {
+		var r;
+		while (r !== 0) {
+			r = _big % _small; //r=8
+			_big = _small; //
+			if (r !== 0) {
+				_small = r;
+			}
+		}
+		answer.push(_small);
+	}
+	getGCD(small, big);
+	// LCM (최소공배수) = n * m / GCD
 	answer.push((n * m) / answer[0]);
 	console.log(answer);
 }
 solution(3, 12);
-solution(1, 10);
+// solution(1, 10);
+// solution(15, 16);
