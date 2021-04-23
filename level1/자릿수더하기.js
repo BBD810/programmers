@@ -1,3 +1,5 @@
+// 2021.04.23 해결
+
 function solution(n) {
 	var answer = 0;
 	n = String(n);
